@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cipher Website</title>
+</head>
+<body>
+    <h1>Choose a Cipher</h1>
+    <form method="post" action="/">
+        <select name="cipher">
+    
+            <option value="rail_fence">Rail Fence</option>
+            <option value="vigenere">Vigenere</option>
+
+        </select>
+        <br>
+        <input type="radio" name="action" value="Encrypt" checked> Encrypt
+        <input type="radio" name="action" value="Decrypt"> Decrypt
+        <br>
+        <textarea name="text" id="text" cols="40" rows="4" placeholder="Enter your text" required></textarea>
+        <input type="text" name="key" placeholder="Enter the key (optional)">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if error_message %}
+        <h2>Error</h2>
+        <p>{{ error_message }}</p>
+    {% elif result %}
+        <h2>Result</h2>
+        <textarea name="" id="" cols="40" rows="4" readonly >{{ result }}</textarea>
+    {% endif %}
+
+
+
+</body>
+</html>
